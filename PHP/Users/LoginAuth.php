@@ -28,13 +28,14 @@ else{
 
 if(in_array($first,$nameArr) === TRUE && in_array($pwrd,$pwrArr)){
 
-  header('Location: /drug system/welcomePage.html') or die("failed");
+  header('Location: /drug system/welcomePatients.html') or die("failed");
   
 }
 
 else{
 
   echo "incorrect details";
+ 
 
 }
 

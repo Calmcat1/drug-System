@@ -1,7 +1,7 @@
 // this is a unified toggle system that will toggle all the files
-function toggle(page){
+function toggle(page,elmnt){
 
-  let contentForms
+  let contentForms,togglebtns
 
   contentForms = document.getElementsByClassName('contentForms');
 
@@ -11,6 +11,21 @@ function toggle(page){
   }
 
   document.getElementById(page).style.display = "flex"
+
+  //function that removes button color
+
+  togglebtns = document.getElementsByClassName('togglebtn')
+
+  //function that iterates through the btns and removes their base color
+  for(i=0; i<togglebtns.length; i++){
+    togglebtns[i].style.backgroundColor = ""
+    togglebtns[i].style.color = "black"
+  }
+
+  //this changes the btn color to black
+  elmnt.style.backgroundColor = "black"
+  elmnt.style.color = "white"
+
 }
 
 document.getElementById('defaultDisplay').click()

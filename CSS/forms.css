@@ -20,10 +20,22 @@ button,#submit{
   font-family: roboto;
   background-color: transparent;
   border-width: 1px;
+  transition: 0.3s color, 0.3s background-color
+}
+
+button:hover,#submit:hover{
+  background-color: black;
+  color: white;
 }
 
 a{
   padding-bottom: 10px;
+  text-decoration: none;
+  color: black
+}
+
+a:hover{
+  opacity: 0.6;
 }
 
 .maincontainer{

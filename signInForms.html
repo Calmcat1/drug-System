@@ -20,11 +20,11 @@
     <div class="formToggle">
 
       <!--this element Patient account is the default display users see-->
-      <button onclick="toggle('patientForm')" id="defaultDisplay">Patient account</button></br></br>
-      <button onclick="toggle('doctorForm')">Doctor's account</button></br></br>
-      <button onclick="toggle('pharmacyForm')">Pharmacy</button></br></br>
-      <button onclick="toggle('companyForm')">Comapany</button></br></br>
-      <button onclick="toggle('adminform')">admin</button><br><br>
+      <button class="togglebtn" onclick="toggle('patientForm',this)" id="defaultDisplay">Patient account</button></br></br>
+      <button class="togglebtn" onclick="toggle('doctorForm',this)">Doctor's account</button></br></br>
+      <button class="togglebtn" onclick="toggle('pharmacyForm',this)">Pharmacy</button></br></br>
+      <button class="togglebtn" onclick="toggle('companyForm',this)">Comapany</button></br></br>
+      <button class="togglebtn" onclick="toggle('adminform',this)">admin</button><br><br>
 
     </div>
 
@@ -46,7 +46,7 @@
           <input type="text" name="first" id="first" placeholder="firstname"><br><br>
           <input type="password" name="password" id="last" placeholder="password"><br><br>
           <input type="submit" name="submit" value="SIGN IN" id="submit"><br><br>
-          <input type="reset">
+         
         </form>
     </div>
 
@@ -57,7 +57,7 @@
         <input type="text" name=first placeholder="name"><br><br>
         <input type="text" name="SSN" placeholder="SSN"><br><br>
         <input type="submit" name="submit" value="SIGN IN" id="submit"><br><br>
-        <input type="reset"><br>
+        
     </form>
     </div>
 
