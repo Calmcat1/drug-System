@@ -7,7 +7,9 @@ html{
 }
 
 input{
+  padding: 6px 17px 6px 17px;
   font-family: roboto;
+  font-size: 16px;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
@@ -17,6 +19,7 @@ button,#submit{
   padding: 6px 17px 6px 17px;
   font-family: roboto;
   background-color: transparent;
+  border-width: 1px;
 }
 
 a{
