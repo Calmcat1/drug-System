@@ -1,10 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
+/* key -> the negbtn id is for all buttons that perform deletion actions */
 
 html{
   scroll-behavior: smooth;
 }
 
+
+
+button,#submit,#btnDeletionUser{
+  padding: 6px 17px 6px 17px;
+  margin-bottom: 10px;
+  font-family: roboto;
+  background-color: transparent;
+  border-width: 1px;
+  transition: 0.3s color, 0.3s background-color
+}
+
+button:hover,#submit:hover{
+  background-color: black;
+  color: white;
+}
+
 .maincontainer{
   font-family: roboto;
+}
+
+/* also present in forms.css*/
+.contentForms{
+  display: none;
+  flex-direction: column;
+}
+
+/*set to none to facilitate toggleing*/
+
+.innertogglecontent{
+  display: none
+}
+
+/*overriding qualities of the negative buttons*/
+.negBtn{
+  color: red;
+  border-color: red;
+  border-style: solid;
+}
+
+.negBtn:hover{
+  background-color: red;
+  color: white;
 }

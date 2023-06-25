@@ -1,4 +1,9 @@
 // this is a unified toggle system that will toggle all the files
+
+//uses the keywords 
+// contentForms-> to specify all togglable content
+// togglebtn->specifes all the button being used for toggling
+
 function toggle(page,elmnt){
 
   let contentForms,togglebtns
