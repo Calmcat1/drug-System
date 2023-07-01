@@ -2,25 +2,57 @@
 
 /* key -> the negbtn id is for all buttons that perform deletion actions */
 
+
+
+
 html{
   scroll-behavior: smooth;
 }
 
+body{
+  margin: 0 0 0 0;
+}
 
+p, ul li{
+  width: 500px;
+  font-weight: 100;
+}
 
-button,#submit,#btnDeletionUser{
+/*remove margins from h6&h5*/
+
+h6,h5{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+button,#submit,#btnDeletionUser,a{
   padding: 6px 17px 6px 17px;
   margin-bottom: 10px;
   font-family: roboto;
   background-color: transparent;
   border-width: 1px;
-  transition: 0.3s color, 0.3s background-color
+  transition: 0.3s color, 0.3s background-color;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-button:hover,#submit:hover{
+/*also a style*/
+a{
+  text-decoration: none;
+  border: 1px black solid;
+}
+
+button:hover,#submit:hover,a:hover{
   background-color: black;
   color: white;
 }
+
+
+
+
 
 .maincontainer{
   font-family: roboto;
@@ -49,3 +81,32 @@ button:hover,#submit:hover{
   background-color: red;
   color: white;
 }
+
+/* navigation bars for the pages*/
+.navbar{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 1px 1px 2px black;
+  width: 100vw;
+}
+
+/*content trait override */
+.content,.footer{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+/*override some footer traits*/
+.footer{
+  background-color: rgba(128, 128, 128, 0.555);
+  padding-top: 50px;
+  height: auto;
+}
+

@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -12,24 +15,34 @@
 
 <body>
 
-  <!--buttonshifters-->
-  <div class="formToggle">
-    <button class="togglebtn" onclick="toggle('mainPage',this)" id="defaultDisplay">Welcome Page!</button>
-    <button class="togglebtn" onclick="toggle('settings',this)">account settings</button>
-  </div>
+  <!--here is the maincontainer holding our elements-->
 
-  <!--maincontainer which holds all elmnts-->
   <div class="maincontainer">
-    
 
-    <!--content containers are here-->
-    <div class="contentForms" id="mainPage">
-      <h1>Welcome,</h1>
-
+    <!--the navigation elements are stored here in this div box-->
+    <div class="navbar">
+      <h1>Welcome, <?php echo $_SESSION["userVar"]; ?></h1>
+      <div class="navbtn">
+        <button class="togglebtn" onclick="">Log Out</button>
+        <button class="togglebtn" onclick="toggle('mainPage',this)" id="defaultDisplay">Welcome Page!</button>
+        <button class="togglebtn" onclick="toggle('settings',this)">account settings</button>
+      </div>
     </div>
 
-    <!--contentcontainer for settings-->
-    <div class="contentForms" id="settings">
+
+  <!--where the content is stored-->
+  <div class="content">
+	<!--here is where the shifters are stored-->
+
+
+
+
+      <div class="contentForms" id="mainPage">
+          <p>welcome, what would you like to do</p>
+      </div>
+
+      <!--settings form-->
+	    <div class="contentForms" id="settings">
       <h1>User Settings</h1>
 
       <!--this is the level 2 toggle settings-->
@@ -59,7 +72,6 @@
           <input type="password" name="password" placeholder="password"><br><br>
           <input type="submit" value="Delete" class="negBtn" id="btnDeletionUser">
         </form>
-
       </div>
     </div>
 
@@ -68,14 +80,22 @@
     <div class="contentForms" id="extras">
 
     </div>
-    
-    
-   
-  </div>
+	
+  
+    </div>
 
-  <script src="JS/innertoggleUnified.js"></script>
-  <script src="JS/toggleUnified.js"></script>
+    <!--where the footer is located-->
+    <div class="footer">
+      <h5>drug company co</h5>
+      <h6>all rights reserved</h6>
+      <h6>2023</h6>
+    </div>
+
+  </div>
   
 </body>
-</html>
 
+  <script src="JS/toggleUnified.js"></script>
+  <script src="JS/innertoggleUnified.js"></script>
+
+</html>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include_once("C:/xampp/htdocs/drug System/PHP/connectorclass.php");
 
 $nameArr = array(); 
@@ -9,6 +11,8 @@ if(isset($_POST["first"]) && isset($_POST["password"])){
 
   $first = $_POST["first"];
   $pwrd = $_POST["password"];
+  $_SESSION["userVar"] = $first;
+
 }
 
 $sql = "SELECT Fname,pwrd FROM `patient details`";
@@ -28,7 +32,7 @@ else{
 
 if(in_array($first,$nameArr) === TRUE && in_array($pwrd,$pwrArr)){
 
-  header('Location: /drug system/welcomePatients.html') or die("failed");
+  header('Location: /drug system/welcomePatients.php') or die("failed");
   
 }
 
@@ -39,6 +43,10 @@ else{
 
 }
 
+
+
+
+ 
 
 ?>
 
