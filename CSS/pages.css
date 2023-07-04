@@ -14,6 +14,7 @@ body{
 }
 
 p, ul li{
+  font-family: roboto;
   width: 500px;
   font-weight: 100;
 }
@@ -62,6 +63,7 @@ button:hover,#submit:hover,a:hover{
 .contentForms{
   display: none;
   flex-direction: column;
+  align-items: center;
 }
 
 /*set to none to facilitate toggleing*/
@@ -86,7 +88,8 @@ button:hover,#submit:hover,a:hover{
 .navbar{
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   gap: 20px;
   box-shadow: 1px 1px 2px black;
   width: 100vw;
@@ -97,7 +100,7 @@ button:hover,#submit:hover,a:hover{
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
@@ -108,5 +111,35 @@ button:hover,#submit:hover,a:hover{
   background-color: rgba(128, 128, 128, 0.555);
   padding-top: 50px;
   height: auto;
+}
+
+/* this is for the symbols class and symbolholder and symbolandtextholder, all of them should have similar characteristics*/
+
+.symbolandtextholder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.symbolholder{
+  width: 133px; /* to lock the width to be similar to the height*/
+  padding: 20px 20px 20px 20px;
+  background-color: rgb(26, 189, 26);
+  text-align: center;
+  border-radius: 250px;
+}
+.symbols{
+  display: inline;
+  width: 133px; /* this width is similar to the height for easy modification*/
+  color: white;
+  font-size: 100px;
+  margin: 0 0 0 0;
+}
+
+/*overrides bg color of symbol holder for wrong to red*/
+
+#wrongsymbolholder{
+  background-color: red;
 }
 

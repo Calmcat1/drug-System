@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="CSS/forms.css">
+<link rel="stylesheet" href="../CSS/forms.css">
 
 <body>
 
@@ -23,24 +23,26 @@
       <button class="togglebtn" onclick="toggle('patientForm',this)" id="defaultDisplay">Patient account</button></br></br>
       <button class="togglebtn" onclick="toggle('doctorForm',this)">Doctor's account</button></br></br>
       <button class="togglebtn" onclick="toggle('pharmacyForm',this)">Pharmacy</button></br></br>
-      <button class="togglebtn" onclick="toggle('companyForm',this)">Comapany</button></br></br>
+      <button class="togglebtn" onclick="toggle('companyForm',this)">Company</button></br></br>
 
     </div>
 
     <!--Tip the contentforms div is used to allow for shifting of content in the divs-->
     <!--companySignUpForm-->
     <div class="contentForms" id="companyForm">
-      <form action="company.php" method="post">
+      <form action="../PHP/Company/CompanyAddition.php" method="post">
         <h1>Company Registration</h1>
         <input type="text" name="name" id="name" placeholder="name"></br><br>
         <input type="text" name="phone" id="phone" placeholder="phoneNumber"></br></br>
-        <input type="submit" value="Register" id="submit"></br></br>
+        <input type="text" name="companyAddress" id="companyAddress" placeholder="address"><br><br>
+        <input type="password" name="password" id="pass" placeholder="password"><br><br>
+        <input type="submit" value="Register" id="submit" name="submit"></br></br>
       </form>
     </div>
 
     <!--PatientSignUpForm-->
     <div class="contentForms" id="patientForm">
-      <form action="PHP/Users/UserAddition.php" method="post">
+      <form action="../PHP/Users/UserAddition.php" method="post">
         <h1>Patient Registration</h1>
         <input type="text" name="fname" id="fname" placeholder="first name"> <br><br>
         <input type="text" name="sname" id="sname" placeholder="second name"><br><br>
@@ -55,25 +57,27 @@
 
     <!--DoctorSignUpForm-->
     <div class="contentForms" id="doctorForm">
-      <form action="database.php" method="post">
+      <form action="../PHP/Doctors/DoctorAddition.php" method="post">
         <h1>Doctor Registration</h1> 
         <input type="text" name="name" id="name" placeholder="name"> <br><br>
         <input type="text" name="email" id="email" placeholder="email"><br><br>
         <input type="text" name="ssn" id="ssn" placeholder="ssn"><br><br>
         <input type="text" name="speciality" id="speciality" placeholder="speciality"><br><br>
         <input type="text" name="yoe" id="yoe" placeholder="Y.O.E"><br><br>
-        <input type="submit" name="Register" id="submit"  value="register"><br><br>
+        <input type="password" name="password" id="pass" placeholder="password"><br><br>
+        <input type="submit" name="submit" id="submit"  value="register"><br><br>
       </form>
     </div>
 
     <!--pharmacySignUpForm-->
     <div class="contentForms" id="pharmacyForm">
-      <form action="" method="post">
+      <form action="../PHP/Pharmacy/PharmacyAddition.php" method="post">
         <h1>Pharmacy registration</h1>
         <input type="text" name="name" id="name" placeholder="name"><br><br>
-        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="name"><br><br>
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="phone"><br><br>
         <input type="text" name="address" id="address" placeholder="address"><br><br>
-        <input type="submit" value="submit" id="submit">
+        <input type="password" name="password" id="pharmacyPass" placeholder="password"><br><br>
+        <input type="submit" value="submit" id="submit" name="submit">
       </form>
     </div>
   
@@ -91,6 +95,6 @@
   
 </body>
 
-<script src="JS/toggleUnified.js"></script>
+<script src="../JS/toggleUnified.js"></script>
 
 </html>

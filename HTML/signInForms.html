@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="CSS/forms.css">
+<link rel="stylesheet" href="../CSS/forms.css">
 
 <body>
 
@@ -23,7 +23,7 @@
       <button class="togglebtn" onclick="toggle('patientForm',this)" id="defaultDisplay">Patient account</button></br></br>
       <button class="togglebtn" onclick="toggle('doctorForm',this)">Doctor's account</button></br></br>
       <button class="togglebtn" onclick="toggle('pharmacyForm',this)">Pharmacy</button></br></br>
-      <button class="togglebtn" onclick="toggle('companyForm',this)">Comapany</button></br></br>
+      <button class="togglebtn" onclick="toggle('companyForm',this)">Company</button></br></br>
       <button class="togglebtn" onclick="toggle('adminform',this)">admin</button><br><br>
 
     </div>
@@ -31,20 +31,20 @@
     <!--Tip the contentforms div is used to allow for shifting of content in the divs-->
     <!--companySignInForm-->
     <div class="contentForms" id="companyForm">
-      <form action="company.php" method="post">
-        <h3>Company signin!</h3>
+      <form action="../PHP/Company/LoginAuthCompany.php" method="post">
+        <h3>Welcome back!</h3>
         <input type="text" name="name" id="name" placeholder="name"></br><br>
-        <input type="text" name="phone" id="phone" placeholder="phoneNumber"></br></br>
-        <input type="submit" value="Register" id="submit"></br></br>
+        <input type="password" name="password" placeholder="password"></br></br>
+        <input type="submit" value="SIGN IN" id="submit" name="submit"></br></br>
       </form>
     </div>
 
     <!--PatientSignInForm-->
     <div class="contentForms" id="patientForm">
-        <form action="PHP/Users/LoginAuth.php" method="post">
+        <form action="../PHP/Users/LoginAuth.php" method="post">
           <h3>Welcome back! Patient</h3>
-          <input type="text" name="first" id="first" placeholder="firstname"><br><br>
-          <input type="password" name="password" id="last" placeholder="password"><br><br>
+          <input type="text" name="first"  placeholder="firstname"><br><br>
+          <input type="password" name="password"  placeholder="password"><br><br>
           <input type="submit" name="submit" value="SIGN IN" id="submit"><br><br>
          
         </form>
@@ -52,10 +52,10 @@
 
     <!--DoctorSignInForm-->
     <div class="contentForms" id="doctorForm">
-      <form name="Doctor's login form" action="doctor_login.php" method="post">
-        <h3>Karibu daktari!</h3>
-        <input type="text" name=first placeholder="name"><br><br>
-        <input type="text" name="SSN" placeholder="SSN"><br><br>
+      <form  action="../PHP/Doctors/LoginAuthDoctor.php" method="post">
+        <h3>Welcome back! Doctor!</h3>
+        <input type="text" name="name" placeholder="name"><br><br>
+        <input type="password" name="password" placeholder="password"><br><br>
         <input type="submit" name="submit" value="SIGN IN" id="submit"><br><br>
         
     </form>
@@ -63,23 +63,22 @@
 
     <!--pharmacySignInForm-->
     <div class="contentForms" id="pharmacyForm">
-      <form action="" method="post">
-        <h3>welcome pharmacist!</h3>
+      <form action="../PHP/Pharmacy/LoginAuthPharma.php" method="post">
+        <h3>welcome back! pharmacist!</h3>
         <input type="text" name="name" id="name" placeholder="name"><br><br>
-        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="phoneNumber"><br><br>
-        <input type="text" name="address" id="address" placeholder="address"><br><br>
-        <input type="submit" value="sign in" id="submit">
+        <input type="password" name="password" placeholder="password"><br><br>
+        <input type="submit" value="SIGN IN" id="submit" name="submit"><br><br>
       </form>
     </div>
 
     <!--admin Panel access-->
     <!--admin credentials are manually added to the database-->
     <div class="contentForms" id="adminform">
-      <form action="PHP/Admin/adminLogin.php" method="post">
+      <form action="../PHP/Admin/adminLogin.php" method="post">
         <h1>Admin</h1>
         <input type="text" name="name" id="name" placeholder="name"><br><br>
         <input type="password" name="password" id="password" placeholder="password"><br><br>
-        <input type="submit" name="submit" id="submit">
+        <input type="submit" name="submit" id="submit"><br><br>
       </form>
     </div>
 
@@ -98,6 +97,7 @@
   
 </body>
 
-<script src="JS/toggleUnified.js"></script>
+<script src="../JS/toggleUnified.js"></script>
+
 
 </html>

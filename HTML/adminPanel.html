@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="CSS/forms.css">
+<link rel="stylesheet" href="../CSS/forms.css">
 
 
 <body>
@@ -18,13 +18,14 @@
 
     <!--admins features, toggle-->
     <div class="featureToggle">
+      <button class="togglebtn" onclick="toggle('view_user_details',this)">View Patients</button>
       <button class="togglebtn" onclick="toggle('del_User_form',this)">Delete Patients</button>
     </div>
 
 
     <!--delete user forms to be implemented to span the whole db, but rn just for patients-->
     <div class="contentForms" id="del_User_form">
-      <form action="PHP/Admin/patientDelete.php" method="post">
+      <form action="../PHP/Admin/patientDelete.php" method="post">
         <input type="text" name="patient_delete" id="delusers" placeholder="PatientUser">
         <input type="submit" value="delete" id="submit">
       </form>
@@ -38,7 +39,7 @@
 
 
   <!--unified JS for simplicity-->
-  <script src="JS/toggleUnified.js"></script>
+  <script src="../JS/toggleUnified.js"></script>
 
   
 

@@ -11,7 +11,7 @@
   <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="CSS/pages.css">
+<link rel="stylesheet" href="../../CSS/pages.css">
 
 <body>
 
@@ -21,11 +21,12 @@
 
     <!--the navigation elements are stored here in this div box-->
     <div class="navbar">
-      <h1>Welcome, <?php echo $_SESSION["userVar"]; ?></h1>
+      <h3>Welcome, <?php echo $_SESSION["userVar"]; ?></>
       <div class="navbtn">
-        <button class="togglebtn" onclick="">Log Out</button>
+        <button class="togglebtn" onclick="logOut()">Log Out</button>
         <button class="togglebtn" onclick="toggle('mainPage',this)" id="defaultDisplay">Welcome Page!</button>
         <button class="togglebtn" onclick="toggle('settings',this)">account settings</button>
+        <button class="togglebtn" onclick="toggle('patientManagement',this)">Patient Management</button>
       </div>
     </div>
 
@@ -38,7 +39,27 @@
 
 
       <div class="contentForms" id="mainPage">
-          <p>welcome, what would you like to do</p>
+          <!--content for the pages-->
+          <div class="content1">
+            <p>welcome to your user account! here are the features you can perform as a patient
+            </p>
+            <ul>
+              <li>post symptoms</li>
+              <li>review prescription</li>
+              <li>update account information</li>
+              <li>log out</li>
+            </ul>
+      
+            <h1>FAQs</h1>
+            <p>the most commonly asked qns include:</p>
+            <ul>
+              <li>how to delete the account</li>
+              <li>example 1</li>
+              <li>example 2</li>
+              <li>example 3</li>
+            </ul>
+          </div>
+          
       </div>
 
       <!--settings form-->
@@ -48,7 +69,7 @@
       <!--this is the level 2 toggle settings-->
       <div class="level2togglebtns">
         <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('updatePatientProperties',this,'black')">Update Account Details</button>
-        <button class="innertogglebutton" class="negBtn" onclick="innertoggle('deletePatientAccount',this,'red')"> Delete account</button>
+        <button class="innertogglebutton" class="negBtn" onclick="innertoggle('deletePatientAccount',this,'red')">Request deletion</button>
       </div>
 
       <!--level 2 content containers-->
@@ -68,16 +89,37 @@
       <!--here is where deletion of account occurs-->
       <div class="innertogglecontent" id="deletePatientAccount" >
         <form action="PHP/Users/deleteUser.php" method="post">
-          <h1>Are you sure you want to delete the account, password to confirm</h1>
+          <h3>input your password, we will confirm pending deletion of your account in 28 days</h3>
           <input type="password" name="password" placeholder="password"><br><br>
-          <input type="submit" value="Delete" class="negBtn" id="btnDeletionUser">
+          <input type="submit" value="Request Deletion" class="negBtn" id="btnDeletionUser">
         </form>
       </div>
     </div>
 
 
     <!--next content form-->
-    <div class="contentForms" id="extras">
+    <div class="contentForms" id="patientManagement">
+      <div class="level2togglebtns">
+        <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('updatePatientForm',this,'green')">post symptoms</button>
+        <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('viewPatientPrescription',this,'green')">view prescription</button>
+      </div>
+      
+      <!-- form to update the patient's symptoms details-->
+        <div class="innertogglecontent" id="updatePatientForm">
+          <form>
+            <input type="text" id="patientName" placeholder="patientName"><br><br>
+            <textarea placeholder="Description of symptoms"></textarea>
+          </form>
+        </div>
+
+        <!-- table to view the patient's symptoms details-->
+        <div class="innertogglecontent" id="viewPatientPrescription">
+          <form>
+            <!--here table will be automatically updated with php and echoed here-->
+            <p>table soon!</p>
+          </form>
+        </div>
+      
 
     </div>
 	
@@ -95,7 +137,8 @@
   
 </body>
 
-  <script src="JS/toggleUnified.js"></script>
-  <script src="JS/innertoggleUnified.js"></script>
+  <script src="../../JS/toggleUnified.js"></script>
+  <script src="../../JS/innertoggleUnified.js"></script>
+  <script src="../../JS/redirections.js"></script>
 
 </html>

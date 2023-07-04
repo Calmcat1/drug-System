@@ -7,20 +7,20 @@ include_once("C:/xampp/htdocs/drug System/PHP/connectorclass.php");
 $nameArr = array(); 
 $pwrArr = array();
 
-if(isset($_POST["first"]) && isset($_POST["password"])){
+if(isset($_POST["name"]) && isset($_POST["password"])){
 
-  $first = $_POST["first"];
+  $first = $_POST["name"];
   $pwrd = $_POST["password"];
   $_SESSION["userVar"] = $first;
 
 }
 
-$sql = "SELECT Fname,pwrd FROM `patient details`";
+$sql = "SELECT DoctorName,DoctorPassword FROM `doctordetails`";
 $result = $conn->query($sql);
 if ($result -> num_rows > 0){
   while($row = $result->fetch_assoc()){ 
-    array_push($nameArr,$row["Fname"]);
-    array_push($pwrArr,$row["pwrd"]);
+    array_push($nameArr,$row["DoctorName"]);
+    array_push($pwrArr,$row["DoctorPassword"]);
    
     
   }
@@ -32,7 +32,7 @@ else{
 
 if(in_array($first,$nameArr) === TRUE && in_array($pwrd,$pwrArr)){
 
-  header('Location: /drug system/PHP/UserPages/welcomePatients.php') or die("failed");
+  header('Location: /drug system/PHP/UserPages/welcomeDoctors.php') or die("failed");
   
 }
 

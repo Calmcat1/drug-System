@@ -28,7 +28,7 @@ else{
 
 if(in_array($first,$nameArr) === TRUE && in_array($pwrd,$pwrArr)){
 
-  header('Location: /drug system/adminPanel.html') or die("failed");
+  header('Location: /drug system/HTML/adminPanel.html') or die("failed");
   
 }
 

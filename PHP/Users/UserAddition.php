@@ -23,9 +23,9 @@
     
 
     if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+      header('Location: /drug system/MISC HTML FILES/successful.html') or die("failed");
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      header('Location: /drug system/MISC HTML FILES/failure.html') or die("failed");
     }
 
     $conn->close();
