@@ -82,7 +82,7 @@
           <input type="text" name="address" id="address" placeholder="address"><br><br>
           <input type="text" name="age" id="age" placeholder="age"><br><br>
           <input type="password" id="pw" name="pw" placeholder="password"><br><br>
-          <input type="submit" value="Update" name="submit" id="submit">
+          <button type="submit"  name="submit" id="submit">Update</button>
         </form>
       </div>
 
@@ -106,9 +106,11 @@
       
       <!-- form to update the patient's symptoms details-->
         <div class="innertogglecontent" id="updatePatientForm">
-          <form>
-            <input type="text" id="patientName" placeholder="patientName"><br><br>
-            <textarea placeholder="Description of symptoms"></textarea>
+          <form action="../Users/symptomAddition.php" method="POST">
+            <input type="text" name="symptomID" placeholder="symptomId" required><br><br>
+            <input type="text" id="patientName" value="<?php echo $_SESSION["userVar"]?>" name="patientName" readonly><br><br>
+            <textarea placeholder="Description of symptoms" name="patientSymptoms" required></textarea><br><br>
+            <button type="submit" name="submit">Add Symptoms</button><br><br>
           </form>
         </div>
 

@@ -76,7 +76,7 @@
           <input type="text" name="phoneNumber" id="phoneNumber" placeholder="name"><br><br>
           <input type="text" name="address" id="address" placeholder="address"><br><br>
           <input type="password" name="password" id="pharmacyPass" placeholder="password"><br><br>
-          <input type="submit" value="Update" name="submit" id="submit">
+          <button type="submit" name="submit" id="submit">Update</button>
         </form>
       </div>
 
@@ -102,6 +102,7 @@
           <form>
             <input type="text" id="pharmacyName" placeholder="pharmacyName"><br><br>
             <textarea placeholder="Description of symptoms"></textarea>
+            <button type="submit">Run</button>
           </form>
         </div>
 

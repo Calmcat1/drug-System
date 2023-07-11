@@ -94,16 +94,27 @@
     <div class="contentForms" id="companyManagement">
       <div class="level2togglebtns">
         <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('updateCompanyForm',this,'green')">Add Drugs</button>
+        <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('deleteCompanyForm',this,'red')">Remove Drugs</button>
         <button class="innertogglebutton"  id="defaultDisplay" onclick="innertoggle('viewCompanyContracts',this,'green')">view contracts</button>
+      </div>
+
+      <!--form to remove drugs from the company database-->
+      <div class="innertogglecontent" id="deleteCompanyForm">
+        <form>
+          <input type="text" name="DrugID" placeholder="ID"><br><br>
+          <input type="submit" name="submit" value="delete"><br><br>
+        </form>
       </div>
       
       <!-- form to update the company's symptoms details-->
         <div class="innertogglecontent" id="updateCompanyForm">
-          <form>
+          <form action="../Company/drugAddition.php" method="POST">
+            <input type="text" name="DrugID" placeholder="ID"><br><br>
             <input type="text" name="DrugName" placeholder="DrugName"><br><br>
             <input type="text" name="DrugPrice"placeholder="DrugPrice"><br><br> 
+            <input type="text" name="CompanyName" value="<?php echo $_SESSION["userVar"];?>" readonly><br><br>
             <textarea placeholder="ingredients used" name="ingredients"></textarea><br><br>
-            <input type="submit" name="submit" value="Add drug">
+            <button type="submit" name="submit">Add drug</button><br><br>
           </form>
         </div>
 

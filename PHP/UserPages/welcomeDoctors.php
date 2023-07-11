@@ -20,7 +20,7 @@
 
     <!--the navigation elements are stored here in this div box-->
     <div class="navbar">
-      <h3>Welcome, <?php echo $_SESSION["userVar"]; ?></>
+      <h3>Welcome, <?php echo $_SESSION["userVar"]; ?></h3>
       <div class="navbtn">
         <button class="togglebtn" onclick="logOut()">Log Out</button>
         <button class="togglebtn" onclick="toggle('mainPage',this)" id="defaultDisplay">Welcome Page!</button>
@@ -78,7 +78,7 @@
           <input type="text" name="speciality" id="speciality" placeholder="speciality"><br><br>
           <input type="text" name="yoe" id="yoe" placeholder="Y.O.E"><br><br>
           <input type="text" name="password" id="pass" placeholder="password"><br><br>
-          <input type="submit" value="Update" name="submit" id="submit">
+          <button type="submit"  name="submit" id="submit">Update</button>
         </form>
       </div>
 
@@ -101,9 +101,11 @@
       
       <!-- form to update the doctor's symptoms details-->
         <div class="innertogglecontent" id="updateDoctorForm">
-          <form>
-            <input type="text" id="doctorName" placeholder="doctorName"><br><br>
-            <textarea placeholder="Description of Prescription"></textarea>
+          <form action="../Doctors/prescriptionAddition.php">
+            <input type="text" name="prescriptionID" placeholder="symptomID"><br><br>
+            <input type="text" name="doctorName" value="<?php echo $_SESSION["userVar"];?>" readonly><br><br>
+            <textarea placeholder="Description of Prescription" name="doctorPrescription"></textarea><br><br>
+            <button type="submit" name="submit">add prescription</button><br><br>
           </form>
         </div>
 
@@ -111,7 +113,11 @@
         <div class="innertogglecontent" id="viewDoctorPrescription">
           <form>
             <!--here table will be automatically updated with php and echoed here-->
-            <p>table soon!</p>
+            <?php
+
+            
+
+            ?>
           </form>
         </div>
       
